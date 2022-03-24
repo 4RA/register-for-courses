@@ -1,0 +1,118 @@
+<div class="sidebar" th:with="user =${#authentication.principal}">
+    <ul class="navigation-menu">
+
+        <li>
+            <a href="#admin-li" data-toggle="collapse" aria-expanded="false">
+                <span class="link-title">통계 관리</span><i class="mdi mdi-apps link-icon"></i>
+            </a>
+            <ul class="collapse navigation-submenu" id="admin-li">
+                <li><a href="/dashboard">대시보드</a></li>
+            </ul>
+        </li>
+
+        <li>
+            <a href="#admin-li1" data-toggle="collapse" aria-expanded="false">
+                <span class="link-title">회원 관리</span>
+                <i class="mdi mdi-human-handsdown link-icon"></i>
+            </a>
+            <ul class="collapse navigation-submenu" id="admin-li1">
+                <li><a href="/user_list">회원 목록</a></li>
+            </ul>
+        </li>
+
+        <li>
+            <a href="#admin-li2" data-toggle="collapse" aria-expanded="false">
+                <span class="link-title">데이터 관리</span><i class="mdi mdi-assistant link-icon"></i>
+            </a>
+            <ul class="collapse navigation-submenu" id="admin-li2">
+                <li><a href="/library_list">회원 라이브러리</a></li>
+                <!-- <li><a href="/review_list">리뷰 관리</a></li> -->
+            </ul>
+        </li>
+
+        <li>
+            <a href="#admin-li3" data-toggle="collapse" aria-expanded="false">
+                <span class="link-title">뉴스레터 관리</span><i class="mdi mdi-barley link-icon"></i>
+            </a>
+            <ul class="collapse navigation-submenu" id="admin-li3">
+                <li><a href="/newsletter_list">뉴스레터 관리</a></li>
+<!--                <li><a href="/qna_list">문의하기 관리</a></li>-->
+                <!-- <li><a href="/episode/episode_list">에피소드 관리</a></li>
+                <li><a href="/taste/taste_list">Taste 관리</a></li>
+                <li><a href="/popup/list">팝업 관리</a></li> -->
+            </ul>
+        </li>
+
+        <li>
+            <a href="#admin-li4" data-toggle="collapse" aria-expanded="false">
+                <span class="link-title">튜토리얼 관리</span>
+                <i class="mdi mdi-human-handsdown link-icon"></i>
+            </a>
+            <ul class="collapse navigation-submenu" id="admin-li4">
+                <li><a href="/tutorial_list">튜토리얼 관리</a></li>
+                <li><a href="/faq_list">FAQ 관리</a></li>
+            </ul>
+        </li>
+
+        <!--<li>
+            <a href="#admin-li3" data-toggle="collapse"
+               aria-expanded="false"> <span class="link-title">상품 통합 관리</span> <i
+                    class="mdi mdi-cart link-icon"></i>
+            </a>
+            <ul class="collapse navigation-submenu" id="admin-li3">
+                <li><a href="/product/product_list">상품 목록</a></li>
+                <li><a href="/product/register_page">상품 등록</a></li>
+            </ul>
+        </li>-->
+
+        <li>
+            <a href="#admin-li5" data-toggle="collapse" aria-expanded="false">
+                <span class="link-title">고객 센터 관리</span><i class="mdi mdi-cart link-icon"></i>
+            </a>
+            <ul class="collapse navigation-submenu" id="admin-li5">
+                <li><a href="/qna_list">문의 관리</a></li>
+<!--                <li><a href="/review_list">리뷰 관리</a></li>-->
+            </ul>
+        </li>
+
+        <li>
+            <a href="#admin-li6" data-toggle="collapse" aria-expanded="false">
+                <span class="link-title">결제 관리</span><i class="mdi mdi-basket link-icon"></i>
+            </a>
+            <ul class="collapse navigation-submenu" id="admin-li6">
+                <li><a href="/">결제 리스트</a></li>
+<!--                <li><a href="/payment_ok_list">멤버십 회원 관리</a></li>-->
+                <!-- <li><a href="/delivery_list">배송 관리</a></li> -->
+<!--                <li><a href="/cancel_list">멤버십 취소 관리</a></li>-->
+                <!-- <li><a href="/refund_list">반품 관리</a></li>
+                <li><a href="/swap_list">교환 관리</a></li> -->
+            </ul>
+        </li>
+
+        <li>
+            <a href="#admin-li7" data-toggle="collapse" aria-expanded="false">
+                <span class="link-title">약관 관리</span> <i class="mdi mdi-calendar-text link-icon"></i>
+            </a>
+            <ul class="collapse navigation-submenu" id="admin-li7">
+                <li><a href="/policy_write_page">약관 등록</a></li>
+                <li><a href="/privacy_list">개인 정보 보호 정책 관리</a></li>
+                <li><a href="/terms_list">사용 정책 관리</a></li>
+<!--                <li><a href="/pricing_list">가격 약관 관리</a></li>-->
+                <li><a href="/copyright_list">저작권 정보 관리</a></li>
+<!--                <li><a href="/coupon_record_list">쿠폰 발급 이력</a></li>-->
+<!--                <li><a href="/point_list">유저 포인트 현황</a></li>-->
+            </ul>
+        </li>
+
+        <li>
+            <a href="#admin-li8" data-toggle="collapse" aria-expanded="false">
+                <span class="link-title">관리자 계정 관리</span><i class="mdi mdi-food-apple link-icon"></i>
+            </a>
+            <ul class="collapse navigation-submenu" id="admin-li8">
+                <li><a href="/admin_list">관리자 목록</a></li>
+                <li><a href="/create_admin">관리자 등록</a></li>
+            </ul>
+        </li>
+
+    </ul>
+</div>

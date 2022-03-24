@@ -13,8 +13,11 @@ import javax.validation.constraints.NotEmpty;
 public class Student {
 
     @Id @GeneratedValue
-    @Column(name = "student_id")
     private Long id;
+
+    @Column(name = "student_id")
+    @NotEmpty
+    private String studentId; // 학번
 
     @NotEmpty
     private String password;

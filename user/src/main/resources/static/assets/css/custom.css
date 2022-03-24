@@ -1,0 +1,105 @@
+/* #92E8A7 */
+
+@font-face {
+    font-family: 'Pretendard-Medium';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+}
+
+/* 폰트 설정 */
+.Pretendard-Medium{
+    font-family: 'Pretendard-Medium';
+}
+
+/* 로그인 화면 ui 설정 */
+.authentication-theme.auth-style_1 {
+    width: 99%;
+    padding: 5% 0 0 0;
+}
+
+.authentication-theme.auth-style_1 .logo-section {
+    margin-bottom: 50px;
+}
+
+.authentication-theme.auth-style_1 .grid-body {
+    padding: 60px 15px;
+    position: relative;
+}
+
+.authentication-theme.auth-style_1 .grid-body .form-wrapper {
+    position: unset;
+}
+
+.authentication-theme.auth-style_1 .signup-link {
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    right: 0;
+}
+
+/* div 중앙 정렬 */
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -7.5px;
+    margin-left: -7.5px;
+}
+
+.mr-auto,
+.mx-auto {
+    margin-right: auto !important;
+}
+
+.ml-auto,
+.mx-auto {
+    margin-left: auto !important;
+}
+
+.grid {
+    background: #fff;
+    border-radius: 6px;
+    box-shadow: 0 0 10px -5px rgba(183, 192, 206, 0.15);
+    margin-bottom: 15px;
+    border: 1px solid rgba(238, 238, 238, 0);
+}
+
+.grid-body {
+    padding: 20px 25px 20px;
+}
+
+.btn-main{
+    color: #fff;
+    background-color: #92E8A7;
+    border-color: #92E8A7;
+    text-align: center;
+    padding: 10px 40px;
+}
+
+form{
+    text-align: center;
+}
+
+.btn-kakao:before {
+    content:"";
+    display:inline-block;
+    vertical-align:middle;
+    height:100%;
+}
+.btn-kakao > i {
+    max-width:100%; max-height:100%;
+    display:inline-block;
+    vertical-align:middle;
+}
+
+.btn-naver:before {
+    content:"";
+    display:inline-block;
+    vertical-align:middle;
+    height:100%;
+}
+.btn-naver > i {
+    max-width:100%; max-height:100%;
+    display:inline-block;
+    vertical-align:middle;
+}
