@@ -8,18 +8,26 @@ import org.springframework.web.bind.annotation.GetMapping;
 @RequiredArgsConstructor
 public class LoginController {
 
+    /**
+     * 회원가입 페이지
+     * @return
+     */
     @GetMapping("/register")
     public String register(){
         return "login/register";
     }
 
-
     /**
-     *
-     * @return 로그인 페이지
+     * 로그인 페이지
+     * @return
      */
     @GetMapping("/login")
     public String login(){
         return "login/login";
+    }
+
+    @GetMapping("find/password")
+    public String findPassword(){
+        return "login/forgot-password";
     }
 }
