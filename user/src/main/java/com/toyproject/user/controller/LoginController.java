@@ -26,6 +26,19 @@ public class LoginController {
         return "login/login";
     }
 
+    /**
+     * 아이디 찾기
+     * @return
+     */
+    @GetMapping("find/id")
+    public String findId(){
+        return "login/forgot-id";
+    }
+
+    /**
+     * 비밀번호 찾기
+     * @return
+     */
     @GetMapping("find/password")
     public String findPassword(){
         return "login/forgot-password";
