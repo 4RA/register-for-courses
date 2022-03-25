@@ -13,7 +13,7 @@ public class LoginController {
      * @return
      */
     @GetMapping("/register")
-    public String register(){
+    public String registerForm(){
         return "login/register";
     }
 
@@ -31,7 +31,7 @@ public class LoginController {
      * @return
      */
     @GetMapping("find/id")
-    public String findId(){
+    public String findIdForm(){
         return "login/forgot-id";
     }
 
@@ -40,7 +40,7 @@ public class LoginController {
      * @return
      */
     @GetMapping("find/password")
-    public String findPassword(){
+    public String findPasswordForm(){
         return "login/forgot-password";
     }
 }
