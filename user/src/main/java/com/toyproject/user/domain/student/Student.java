@@ -1,4 +1,4 @@
-package com.toyproject.user.domain;
+package com.toyproject.user.domain.student;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -26,7 +26,9 @@ public class Student {
     private String name;
 
     @NotEmpty
-    private String department; // 학부
+    private String email;
+
+    private String phone;
 
     @NotEmpty
     private String major; // 학과
@@ -35,6 +37,7 @@ public class Student {
     private int grade; // 학년
 
     @NotEmpty
-    private int semester; // 학기
+    private String semester; // 학기
+
 
 }
