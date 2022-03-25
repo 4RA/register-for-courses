@@ -7,9 +7,31 @@
     font-style: normal;
 }
 
+@font-face {
+    font-family: 'Pretendard-Light';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Pretendard-Bold';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Bold.woff') format('woff');
+    font-weight: 700;
+    font-style: normal;
+}
+
 /* 폰트 설정 */
 .Pretendard-Medium{
     font-family: 'Pretendard-Medium';
+}
+
+.Pretendard-Light{
+    font-family: 'Pretendard-Light';
+}
+
+.Pretendard-Bold{
+    font-family: 'Pretendard-Bold';
 }
 
 /* 로그인 화면 ui 설정 */
@@ -102,4 +124,11 @@ form{
     max-width:100%; max-height:100%;
     display:inline-block;
     vertical-align:middle;
+}
+
+/*select box*/
+.select-box {
+    font-size: .8rem;
+    border-radius: 10rem;
+    padding: .75rem 1rem
 }
