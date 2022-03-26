@@ -8,14 +8,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 @RequiredArgsConstructor
 public class LoginController {
 
-    /**
-     * 회원가입 페이지
-     * @return
-     */
-    @GetMapping("/register")
-    public String registerForm(){
-        return "login/register";
-    }
+
 
     /**
      * 로그인 페이지
@@ -30,7 +23,7 @@ public class LoginController {
      * 아이디 찾기
      * @return
      */
-    @GetMapping("find/id")
+    @GetMapping("students/id")
     public String findIdForm(){
         return "login/forgot-id";
     }
@@ -39,7 +32,7 @@ public class LoginController {
      * 비밀번호 찾기
      * @return
      */
-    @GetMapping("find/password")
+    @GetMapping("students/password")
     public String findPasswordForm(){
         return "login/forgot-password";
     }

@@ -1,43 +1,47 @@
 package com.toyproject.user.domain.student;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.*;
-import javax.validation.constraints.NotEmpty;
 
 @Entity
 @Table
 @Getter
 @Setter
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 public class Student {
 
     @Id @GeneratedValue
     private Long id;
 
-    @Column(name = "student_id")
-    @NotEmpty
+    @Column(name = "student_id", nullable = false)
     private String studentId; // 학번
 
-    @NotEmpty
+    @Column(nullable = false)
     private String password;
 
-    @NotEmpty
+    @Column(nullable = false)
     private String name;
 
-    @NotEmpty
+    @Column(nullable = false)
     private String email;
 
+    @Column(nullable = true)
     private String phone;
 
-    @NotEmpty
+    @Column(nullable = false)
     private String major; // 학과
 
-    @NotEmpty
+    @Column(nullable = false)
     private int grade; // 학년
 
-    @NotEmpty
-    private String semester; // 학기
+    @Column(nullable = false)
+    private int semester; // 학기
+
+    @Column(nullable = true)
+    private int credit; // 학점
 
 
 }

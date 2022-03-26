@@ -1,25 +1,37 @@
-package com.toyproject.user.api;
+package com.toyproject.user.controller;
 
 import com.toyproject.user.domain.student.Student;
 import com.toyproject.user.dto.SignUpRequestDto;
-import com.toyproject.user.dto.response.result.CommonResult;
 import com.toyproject.user.service.ResponseService;
 import com.toyproject.user.service.StudentService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.validation.Valid;
 
 @Controller
 @RequiredArgsConstructor
-public class StudentApiController {
+public class StudentController {
 
     private final StudentService studentService;
     private final ResponseService responseService;
+
+    /**
+     * 회원가입 페이지 이동
+     *
+     * @return
+     */
+    @GetMapping("/students/new")
+    public String registerForm(Model model) {
+        model.addAttribute("signUpRequestDto", new SignUpRequestDto());
+        return "login/register";
+    }
 
     /**
      * 회원가입
@@ -28,8 +40,14 @@ public class StudentApiController {
      * @param result
      * @return
      */
-    @PostMapping("/api/v1/students/new")
-    public ResponseEntity<CommonResult> saveStudent(@Valid SignUpRequestDto requestDto, BindingResult result) {
+    @PostMapping("/students/new")
+    public String saveStudent(@Valid SignUpRequestDto requestDto, BindingResult result) {
+
+        if(result.hasErrors()){
+            System.out.println("result.hasErrors() = " + result.hasErrors());
+            return "login/register";
+        }
+
         Student student = Student.builder()
                 .studentId(requestDto.getStudentId())
                 .password(requestDto.getPassword())
@@ -40,11 +58,8 @@ public class StudentApiController {
                 .grade(requestDto.getGrade())
                 .semester(requestDto.getSemester()).build();
 
-        if(result.hasErrors()) {
-            // TODO: Exception 생성해서 exception으로 바꾸기
-            return ResponseEntity.badRequest().body(responseService.getFailResult(result.getFieldError().getDefaultMessage()));
-        }
+        studentService.save(student);
 
-        return ResponseEntity.ok().body(responseService.getSingleResult(studentService.save(student)));
+        return "redirect:../main";
     }
 }
