@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 @RequiredArgsConstructor
 public class MainController {
 
-    @GetMapping("main")
+    @GetMapping("/main")
     public String main(){
         return "login/main";
     }
