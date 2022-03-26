@@ -1,4 +1,4 @@
-package com.toyproject.user.controller;
+package com.toyproject.user.api;
 
 import com.toyproject.user.domain.student.Student;
 import com.toyproject.user.dto.SignUpRequestDto;
