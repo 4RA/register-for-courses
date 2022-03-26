@@ -20,7 +20,7 @@
 </head>
 <style>
     .fieldError {
-        border-color: #bd2130;
+        color: #bd2130;
     }
 </style>
 <body class="bg-gradient-primary">
@@ -41,75 +41,71 @@
                         <form class="user" action="/students/new" th:object="${signUpRequestDto}" method="post">
                             <div class="form-group row">
                                 <div class="col-sm-6 mb-3 mb-sm-0">
-                                    <input type="text" id="id" placeholder="학번" style="border-color: #92E8A7; color: #92E8A7"
-                                           th:class="${#fields.hasErrors('studentId')}? 'form-control form-control-user Pretendard-Light fieldError' : 'form-control form-control-user Pretendard-Light'">
-                                    <p th:if="${#fields.hasErrors('studentId')}" th:errors="*{studentId}">Incorrect date</p>
+                                    <input type="text" id="studentId" name="studentId" placeholder="학번" style="border-color: #92E8A7;" class="form-control form-control-user Pretendard-Light">
+                                    <p th:if="${#fields.hasErrors('studentId')}" th:errors="*{studentId}" class="Pretendard-Light fieldError" style="font-size: 12px;">Incorrect date</p>
                                 </div>
                                 <div class="col-sm-6">
-                                    <input type="text" id="name" placeholder="이름" style="border-color: #92E8A7; color: #92E8A7"
-                                           th:class="${#fields.hasErrors('studentId')}? 'form-control form-control-user Pretendard-Light fieldError' : 'form-control form-control-user Pretendard-Light'">
-                                    <p th:if="${#fields.hasErrors('name')}" th:errors="*{name}">Incorrect date</p>
+                                    <input type="text" id="name" name="name" placeholder="이름" style="border-color: #92E8A7;" class="form-control form-control-user Pretendard-Light">
+                                    <p th:if="${#fields.hasErrors('name')}" th:errors="*{name}" class="Pretendard-Light fieldError" style="font-size: 12px;">Incorrect date</p>
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <div class="col-sm-6 mb-3 mb-sm-0">
-                                    <input type="tel" id="phone" placeholder="핸드폰 번호" style="border-color: #92E8A7; color: #92E8A7"
-                                           th:class="${#fields.hasErrors('studentId')}? 'form-control form-control-user Pretendard-Light fieldError' : 'form-control form-control-user Pretendard-Light'">
-                                    <p th:if="${#fields.hasErrors('phone')}" th:errors="*{name}">Incorrect date</p>
+                                    <input type="tel" id="phone" name="phone" placeholder="핸드폰 번호" style="border-color: #92E8A7;" class="form-control form-control-user Pretendard-Light">
+                                    <p th:if="${#fields.hasErrors('phone')}" th:errors="*{phone}" class="Pretendard-Light fieldError" style="font-size: 12px;">Incorrect date</p>
                                 </div>
                                 <div class="col-sm-6">
-                                    <input type="email" placeholder="이메일" style="border-color: #92E8A7; color: #92E8A7"
-                                           th:class="${#fields.hasErrors('studentId')}? 'form-control form-control-user Pretendard-Light fieldError' : 'form-control form-control-user Pretendard-Light'">
-                                    <p th:if="${#fields.hasErrors('email')}" th:errors="*{email}">Incorrect date</p>
+                                    <input type="email" id="email" name="email" placeholder="이메일" style="border-color: #92E8A7;" class="form-control form-control-user Pretendard-Light">
+                                    <p th:if="${#fields.hasErrors('email')}" th:errors="*{email}" class="Pretendard-Light fieldError" style="font-size: 12px;">Incorrect date</p>
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <div class="col-sm-6 mb-3 mb-sm-0">
-                                    <input type="password" id="password" placeholder="비밀번호" style="border-color: #92E8A7; color: #92E8A7"
-                                           th:class="${#fields.hasErrors('studentId')}? 'form-control form-control-user Pretendard-Light fieldError' : 'form-control form-control-user Pretendard-Light'">
-                                    <p th:if="${#fields.hasErrors('password')}" th:errors="*{password}">Incorrect date</p>
+                                    <input type="password" id="password" name="password" placeholder="비밀번호" style="border-color: #92E8A7;" class="form-control form-control-user Pretendard-Light">
+                                    <p th:if="${#fields.hasErrors('password')}" th:errors="*{password}" class="Pretendard-Light fieldError" style="font-size: 12px;">Incorrect date</p>
                                 </div>
                                 <div class="col-sm-6">
                                     <input type="password" class="form-control form-control-user Pretendard-Light"
-                                           id="repeatPassword" placeholder="비밀번호 확인" style="border-color: #92E8A7; color: #92E8A7">
+                                           id="repeatPassword" placeholder="비밀번호 확인" style="border-color: #92E8A7;">
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <div class="col-sm-6 mb-3 mb-sm-0">
-                                    <select name="major" id="major" class="form-control select-box Pretendard-Light"
-                                            style="font-size: .8rem; border-radius: 10rem; border-color: #92E8A7;"
-                                            th:class="${#fields.hasErrors('studentId')}? 'form-control select-box Pretendard-Light fieldError' : 'form-control select-box Pretendard-Light'">
+                                    <select name="major" id="major" class="form-control Pretendard-Light"
+                                            style="font-size: .8rem; border-radius: 10rem; border-color: #92E8A7;">
                                         <option value="">학과선택</option>
                                         <option value="경영학과">경영학과</option>
                                         <option value="영어영문학과">영어영문학과</option>
                                         <option value="소프트웨어학부">소프트웨어학부</option>
                                     </select>
-                                    <p th:if="${#fields.hasErrors('major')}" th:errors="*{major}">Incorrect date</p>
+                                    <p th:if="${#fields.hasErrors('major')}" th:errors="*{major}" class="Pretendard-Light fieldError" style="font-size: 12px;">Incorrect date</p>
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <div class="col-sm-6 mb-3 mb-sm-0">
                                     <select name="grade" id="grade" class="form-control Pretendard-Light"
                                             style="font-size: .8rem; border-radius: 10rem; border-color: #92E8A7;">
-                                        <option value="">학년선택</option>
-                                        <option value="1">1</option>
-                                        <option value="2">2</option>
-                                        <option value="3">3</option>
-                                        <option value="4">4</option>
+                                        <option value="5">학년선택</option>
+                                        <option value=1>1</option>
+                                        <option value=2>2</option>
+                                        <option value=3>3</option>
+                                        <option value=4>4</option>
                                     </select>
+                                    <p th:if="${#fields.hasErrors('grade')}" th:errors="*{grade}" class="Pretendard-Light fieldError" style="font-size: 12px;">Incorrect date</p>
                                 </div>
                                 <div class="col-sm-6">
                                     <select name="semester" id="semester" class="form-control Pretendard-Light"
                                             style="font-size: .8rem; border-radius: 10rem; border-color: #92E8A7;">
-                                        <option value="">학기선택</option>
-                                        <option value="1">1학기</option>
-                                        <option value="2">2학기</option>
+                                        <option value="3">학기선택</option>
+                                        <option value=1>1학기</option>
+                                        <option value=2>2학기</option>
                                     </select>
+                                    <p th:if="${#fields.hasErrors('semester')}" th:errors="*{semester}" class="Pretendard-Light fieldError" style="font-size: 12px;">Incorrect date</p>
                                 </div>
                             </div>
-                            <a href="login.html" class="btn btn-primary btn-user btn-block">
+                            <button type="submit" class="btn btn-primary btn-user btn-block">
                                 회원가입
-                            </a>
+                            </button>
                         </form>
                         <hr>
                         <a href="index.html" class="btn btn-kakao btn-user btn-block">

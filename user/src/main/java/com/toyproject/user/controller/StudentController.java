@@ -41,10 +41,10 @@ public class StudentController {
      * @return
      */
     @PostMapping("/students/new")
-    public String saveStudent(@Valid SignUpRequestDto requestDto, BindingResult result) {
-
+    public String saveStudent(@Valid SignUpRequestDto requestDto, BindingResult result, Model model) {
+        System.out.println("requestDto.toString() = " + requestDto.toString());
         if(result.hasErrors()){
-            System.out.println("result.hasErrors() = " + result.hasErrors());
+//            model.addAttribute("signUpRequestDto", requestDto);
             return "login/register";
         }
 
