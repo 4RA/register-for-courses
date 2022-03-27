@@ -60,6 +60,6 @@ public class StudentController {
 
         studentService.save(student);
 
-        return "redirect:../main";
+        return "redirect:../login";
     }
 }
