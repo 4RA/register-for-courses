@@ -43,5 +43,8 @@ public class Student {
     @Column(nullable = true)
     private int credit; // 학점
 
+    @Column(nullable = true)
+    private Role role;
+
 
 }

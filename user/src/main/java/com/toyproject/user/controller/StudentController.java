@@ -1,5 +1,6 @@
 package com.toyproject.user.controller;
 
+import com.toyproject.user.domain.student.Role;
 import com.toyproject.user.domain.student.Student;
 import com.toyproject.user.dto.SignUpRequestDto;
 import com.toyproject.user.service.ResponseService;
@@ -56,7 +57,8 @@ public class StudentController {
                 .phone(requestDto.getPhone())
                 .major(requestDto.getMajor())
                 .grade(requestDto.getGrade())
-                .semester(requestDto.getSemester()).build();
+                .semester(requestDto.getSemester())
+                .role(Role.STUDENT).build();
 
         studentService.save(student);
 

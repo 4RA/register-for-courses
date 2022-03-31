@@ -1,5 +1,6 @@
 package com.toyproject.user.api;
 
+import com.toyproject.user.domain.student.Role;
 import com.toyproject.user.domain.student.Student;
 import com.toyproject.user.dto.SignUpRequestDto;
 import com.toyproject.user.dto.response.result.CommonResult;
@@ -38,7 +39,8 @@ public class StudentApiController {
                 .phone(requestDto.getPhone())
                 .major(requestDto.getMajor())
                 .grade(requestDto.getGrade())
-                .semester(requestDto.getSemester()).build();
+                .semester(requestDto.getSemester())
+                .role(Role.STUDENT).build();
 
         if(result.hasErrors()) {
             // TODO: Exception 생성해서 exception으로 바꾸기
