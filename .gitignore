@@ -1,6 +1,8 @@
 # Compiled class file
 *.class
 
+data.sql
+
 # Log file
 *.log
 
