@@ -58,7 +58,8 @@ public class StudentController {
                 .major(requestDto.getMajor())
                 .grade(requestDto.getGrade())
                 .semester(requestDto.getSemester())
-                .role(Role.STUDENT).build();
+                .credit(0)
+                .activated(1).build();
 
         studentService.save(student);
 

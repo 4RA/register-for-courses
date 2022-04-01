@@ -1,6 +1,10 @@
 server:
   port: 9000
 spring:
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
   thymeleaf:
     prefix: classpath:/templates/
     suffix: .html
@@ -11,11 +15,15 @@ spring:
     driver-class-name: org.h2.Driver
   jpa:
     hibernate:
-      ddl-auto: create
+      ddl-auto: create-drop
     properties:
       hibernate:
         # show_sql: true
         format_sql: true
+    defer-datasource-initialization: true
+  sql:
+    init:
+      mode: always
 logging.level:
   org.hibernate.SQL: debug
   org.hibernate.type: trace

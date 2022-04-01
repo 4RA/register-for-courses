@@ -39,8 +39,7 @@ public class StudentApiController {
                 .phone(requestDto.getPhone())
                 .major(requestDto.getMajor())
                 .grade(requestDto.getGrade())
-                .semester(requestDto.getSemester())
-                .role(Role.STUDENT).build();
+                .semester(requestDto.getSemester()).build();
 
         if(result.hasErrors()) {
             // TODO: Exception 생성해서 exception으로 바꾸기
