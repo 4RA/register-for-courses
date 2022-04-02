@@ -1,13 +1,14 @@
 package com.toyproject.user.service;
 
 import com.toyproject.user.domain.student.Student;
-import com.toyproject.user.dto.SignUpRequestDto;
 import com.toyproject.user.repository.StudentRepository;
+import com.toyproject.user.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 @Transactional(readOnly = true) // 읽기 전용(ex. select)에는 readOnly를 넣어주는 게 좋다.
@@ -15,6 +16,7 @@ import java.util.List;
 public class StudentService {
 
     private final StudentRepository studentRepository;
+    private final UserRepository userRepositoryImpl;
 
 
     @Transactional

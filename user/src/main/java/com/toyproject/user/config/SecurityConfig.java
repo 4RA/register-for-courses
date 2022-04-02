@@ -4,7 +4,6 @@ import com.toyproject.user.jwt.JwtAccessDeniedHandler;
 import com.toyproject.user.jwt.JwtAuthenticationEntryPoint;
 import com.toyproject.user.jwt.JwtSecurityConfig;
 import com.toyproject.user.jwt.TokenProvider;
-import lombok.RequiredArgsConstructor;
 import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.builders.WebSecurity;
@@ -31,8 +30,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
             TokenProvider tokenProvider,
             CorsFilter corsFilter,
             JwtAuthenticationEntryPoint jwtAuthenticationEntryPoint,
-            JwtAccessDeniedHandler jwtAccessDeniedHandler
-    ) {
+            JwtAccessDeniedHandler jwtAccessDeniedHandler) {
         this.tokenProvider = tokenProvider;
         this.corsFilter = corsFilter;
         this.jwtAuthenticationEntryPoint = jwtAuthenticationEntryPoint;
@@ -50,9 +48,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         web.ignoring()
                 .antMatchers(
                         "/favicon.ico"
-                        ,"/h2-console/**"
-                        ,"/error"
-                        ,"/resources/**"
+                        , "/h2-console/**"
+                        , "/error"
+                        , "/resources/**"
                 );
     }
 
@@ -78,11 +76,23 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
                 .and()
                 .authorizeRequests() // HttpServletRequest를 사용하는 요청들에 대한 접근제한 설정
-                .antMatchers("/main").authenticated() // "/"에 대한 요청은 인증없이 접근 허용 -> 프로젝트 실행 시 메인 페이지(http://localhost:9000/)는 누구든 들어갈 수 있도록
-                .anyRequest().permitAll() // 나머지 요청들은 모두 인증 받아야 함
+                .antMatchers("/main").authenticated()
+                .anyRequest().permitAll()
 
                 .and()
-                .apply(new JwtSecurityConfig(tokenProvider));
+                .apply(new JwtSecurityConfig(tokenProvider))
+
+                .and()
+                .formLogin()
+                .loginPage("/login")
+                .failureForwardUrl("/404error")
+                .permitAll(true)
+                .defaultSuccessUrl("/main")
+                .and()
+                .logout()
+                .logoutUrl("/logout")
+                .logoutSuccessUrl("/login")
+                .invalidateHttpSession(true);
 
         http.cors().and();
     }
