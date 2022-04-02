@@ -43,14 +43,14 @@
                                     <h1 class="Pretendard-Medium" style="text-align: center; color: #92E8A7"><b>로그인</b>
                                     </h1>
                                 </div>
-                                <form class="user">
+                                <form class="user" action="/api/authenticate" method="post">
                                     <div class="form-group">
                                         <input type="text" class="form-control form-control-user Pretendard-Light"
-                                               id="id" placeholder="학번을 입력하세요" style="border-color: #92E8A7; color: #92E8A7">
+                                               id="studentId" name="studentId" placeholder="학번을 입력하세요" style="border-color: #92E8A7; color: #92E8A7">
                                     </div>
                                     <div class="form-group">
                                         <input type="password" class="form-control form-control-user Pretendard-Light"
-                                               id="password" placeholder="비밀번호를 입력하세요" style="border-color: #92E8A7; color: #92E8A7">
+                                               id="password" name="password" placeholder="비밀번호를 입력하세요" style="border-color: #92E8A7; color: #92E8A7">
                                     </div>
                                     <div class="form-group">
                                         <div class="custom-control custom-checkbox small">
@@ -58,7 +58,7 @@
                                             <label class="custom-control-label" for="customCheck">Remember Me</label>
                                         </div>
                                     </div>
-                                    <a href="index.html" class="btn btn-primary btn-user btn-block Pretendard-Light">로그인</a>
+                                    <button type="submit" class="btn btn-primary btn-user btn-block Pretendard-Light">로그인</button>
                                 </form>
                                 <hr>
                                 <a href="index.html" class="btn btn-kakao btn-user btn-block">
