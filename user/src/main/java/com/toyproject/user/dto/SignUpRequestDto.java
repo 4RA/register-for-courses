@@ -1,14 +1,22 @@
 package com.toyproject.user.dto;
 
-import lombok.Getter;
-import lombok.Setter;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.databind.PropertyNamingStrategy;
+import com.fasterxml.jackson.databind.annotation.JsonNaming;
+import com.toyproject.user.domain.student.Student;
+import com.toyproject.user.dto.jwt.AuthorityDto;
+import lombok.*;
 
-import javax.persistence.Column;
 import javax.validation.constraints.*;
-
+import java.util.Set;
+import java.util.stream.Collectors;
 
 @Getter
 @Setter
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
+@JsonNaming(PropertyNamingStrategy.SnakeCaseStrategy.class)
 public class SignUpRequestDto {
 
     /*
@@ -23,6 +31,7 @@ public class SignUpRequestDto {
     @NotBlank(message = "학번 입력은 필수 입니다.")
     private String studentId; // 학번
 
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     @NotBlank(message = "비밀번호 입력은 필수 입니다.")
     private String password;
 
@@ -46,6 +55,25 @@ public class SignUpRequestDto {
     @NotNull(message = "학기 입력은 필수 입니다.")
     @Digits(integer = 3, fraction = 0, message = "학기 입력은 필수 입니다.")
     private int semester; // 학기
+
+    private Set<AuthorityDto> authorityDtoSet;
+
+    public static SignUpRequestDto from(Student student) {
+        if(student == null) return null;
+
+        return SignUpRequestDto.builder()
+                .studentId(student.getStudentId())
+                .name(student.getName())
+                .email(student.getEmail())
+                .phone(student.getPhone())
+                .major(student.getMajor())
+                .grade(student.getGrade())
+                .semester(student.getSemester())
+                .authorityDtoSet(student.getAuthorities().stream()
+                        .map(authority -> AuthorityDto.builder().authorityName(authority.getAuthorityName()).build())
+                        .collect(Collectors.toSet()))
+                .build();
+    }
 
     @Override
     public String toString() {
